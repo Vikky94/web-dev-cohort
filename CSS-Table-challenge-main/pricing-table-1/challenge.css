@@ -1,0 +1,114 @@
+/* Challenge CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333333;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+h1 {
+  color: #333333;
+}
+
+.pricing-heading {
+  margin: 20px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.pricing-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.pricing-card h2 {
+  color: #000;
+  margin: 20px;
+}
+
+.pricing-card {
+  width: 25%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 2px #888888;
+  cursor: pointer;
+}
+
+.pricing-card:hover {
+  border: 1px solid #ff7800;
+}
+
+.pricing-card.popular {
+  position: relative;
+}
+
+.popular-badge {
+  background: #ff7800;
+  border-radius: 20px;
+  padding: 5px 20px;
+  color: #fff;
+  position: absolute;
+  top: -18px;
+  right: 90px;
+}
+
+.price {
+  color: #000;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.period {
+  color: #a0a8b2;
+}
+
+.features {
+  margin: 30px 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.features li {
+  list-style-type: none;
+}
+
+.subscribe-btn {
+  margin: 30px 0px;
+  padding: 10px 25px;
+  border: none;
+  background: #ff7800;
+  border-radius: 20px;
+  color: #000;
+  cursor: pointer;
+}
+
+.subscribe-btn:hover {
+  background: #ff9232;
+  color: #0a1162; 
+}
