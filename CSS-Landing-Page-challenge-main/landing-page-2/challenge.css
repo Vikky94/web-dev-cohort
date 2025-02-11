@@ -1,0 +1,136 @@
+/* Challenge CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./assets/chaicohort.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-position: 0px;
+}
+
+/* Navbar styles */
+.navbar {
+  background: #1A1A1A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo {
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #00FF9D;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+}
+.logo:hover {
+  color: #D2DDDD;
+}
+
+.logo img {
+  border-radius: 25px;
+  border: 2px solid #00FF9D;
+}
+
+.menu a {
+  padding-right: 24px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: #00FF9D;
+  font-weight: 500;
+}
+
+/* Hero section styles */
+.hero {
+  margin-top: 50px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  color: #00FF9D;
+  font-size: 2.5rem;
+}
+
+.hero-content p {
+  color: #fff;
+}
+
+.hero-content img {
+  border: 2px solid #00FF9D;
+  border-radius: 5px;
+}
+
+.enroll-button {
+  padding: 10px 40px;
+  border-radius: 25px;
+  cursor: pointer;
+  background: #00FF9D;
+  border: none;
+  transition: 0.8s;
+}
+
+.enroll-button:hover {
+  color: #00FF9D;
+  background: #1A1A1A;
+  border: 1px solid #00FF9D;
+}
+
+/* Highlights section styles */
+.highlights {
+  background: #1A1A1A;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 5% 0;
+  margin-top: 10%;
+}
+
+.highlight-card {
+  padding: 25px 0;
+  width: 16%;
+  background: #2A2A2A;
+  border-radius: 15px;
+}
+
+.highlight-card h3 {
+  color: #00FF9D;
+}
+
+.highlight-card p {
+  color: #D2DDDD;
+  padding: 5%;
+}
+
+@media screen and (max-width:768px) {
+  .highlights{
+    flex-direction: column;
+    gap: 20px;
+  }
+  .highlight-card{
+    width: 60%;
+    margin: auto;
+  }
+}
