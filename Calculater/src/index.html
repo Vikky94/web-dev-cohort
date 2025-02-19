@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="bg-slate-900 text-white h-screen flex justify-center align-center">
+    <div class="cal-container bg-gray-800 border-1 border-amber-500 rounded-xl m-auto w-90 h-100">  
+        <h1 class="text-center mt-2 text-2xl">Calculator</h1>
+        <div class="calc-display flex justify-center align-center mt-2 mb-0 relative">
+            <input class="border-none text-white text-right rounded-sm p-5 text-xl" id="display-input" type="text" value="" disabled>
+            <hr/>
+            <p id="p-equal" class="absolute right-20 bottom-0 text-xl">0</p>
+        </div>
+        <div id="calculator-buttons"  class="grid grid-cols-4 gap-2 border-none rounded-xs p-5">
+            <button value="clear" class="bg-slate-700 text-amber-600 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2 col-span-2 ">AC</button>
+            <button value="%" class="bg-slate-700 text-amber-600 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2">%</button>
+            <button value="/" class="bg-slate-700 text-amber-600 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2">/</button>
+            
+            <button value="7" class="bg-slate-700 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2">7</button>
+            <button value="9" class="bg-slate-700 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2">9</button>
+            <button value="8" class="bg-slate-700 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2">8</button>
+            <button value="*" class="bg-slate-700 text-amber-600 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2">X</button>
+
+            <button value="4" class="bg-slate-700 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2">4</button>
+            <button value="5" class="bg-slate-700 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2">5</button>
+            <button value="6" class="bg-slate-700 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2">6</button>
+            <button value="-" class="bg-slate-700 text-amber-600 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2">-</button>
+
+            <button value="1" class="bg-slate-700 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2">1</button>
+            <button value="2" class="bg-slate-700 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2">2</button>
+            <button value="3" class="bg-slate-700 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2">3</button>
+            <button value="+" class="bg-slate-700 text-amber-600 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2">+</button>
+
+            <button value="0" class="bg-slate-700 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2">0</button>
+            <button value="." class="bg-slate-700 cursor-pointer font-medium text-xl btn border-none rounded-lg p-2">.</button>
+            <button id="equal" value="=" class="bg-amber-500 font-bold cursor-pointer font-medium text-xl btn border-none rounded-lg p-2 col-span-2">=</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
