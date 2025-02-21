@@ -545,6 +545,9 @@
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
+  .mt-10 {
+    margin-top: calc(var(--spacing) * 10);
+  }
   .ml-1 {
     margin-left: calc(var(--spacing) * 1);
   }
@@ -569,8 +572,37 @@
   .table {
     display: table;
   }
+  .size-100 {
+    width: calc(var(--spacing) * 100);
+    height: calc(var(--spacing) * 100);
+  }
+  .size-150 {
+    width: calc(var(--spacing) * 150);
+    height: calc(var(--spacing) * 150);
+  }
+  .size-180 {
+    width: calc(var(--spacing) * 180);
+    height: calc(var(--spacing) * 180);
+  }
+  .size-200 {
+    width: calc(var(--spacing) * 200);
+    height: calc(var(--spacing) * 200);
+  }
+  .size-250 {
+    width: calc(var(--spacing) * 250);
+    height: calc(var(--spacing) * 250);
+  }
+  .h-96 {
+    height: calc(var(--spacing) * 96);
+  }
+  .h-\[80vh\] {
+    height: 80vh;
+  }
   .h-screen {
     height: 100vh;
+  }
+  .w-2xl {
+    width: var(--container-2xl);
   }
   .w-3xl {
     width: var(--container-3xl);
@@ -578,14 +610,41 @@
   .w-3xs {
     width: var(--container-3xs);
   }
+  .w-4xl {
+    width: var(--container-4xl);
+  }
+  .w-5xl {
+    width: var(--container-5xl);
+  }
+  .w-6xl {
+    width: var(--container-6xl);
+  }
+  .w-7xl {
+    width: var(--container-7xl);
+  }
+  .w-100 {
+    width: calc(var(--spacing) * 100);
+  }
+  .w-\[50\%\] {
+    width: 50%;
+  }
+  .w-\[50\] {
+    width: 50;
+  }
   .w-full {
     width: 100%;
+  }
+  .w-lg {
+    width: var(--container-lg);
   }
   .w-screen {
     width: 100vw;
   }
   .w-xl {
     width: var(--container-xl);
+  }
+  .max-w-2xl {
+    max-width: var(--container-2xl);
   }
   .border-collapse {
     border-collapse: collapse;
@@ -601,6 +660,9 @@
   }
   .flex-col {
     flex-direction: column;
+  }
+  .items-center {
+    align-items: center;
   }
   .justify-between {
     justify-content: space-between;
@@ -625,6 +687,9 @@
   }
   .gap-2\.5 {
     gap: calc(var(--spacing) * 2.5);
+  }
+  .gap-5 {
+    gap: calc(var(--spacing) * 5);
   }
   .rounded-lg {
     border-radius: var(--radius-lg);

@@ -14,43 +14,43 @@
 
 </head>
 
-<body class="bg-313743 w-screen h-screen border-1 border-lime-400 text-white">
+<body class="bg-313743 flex justify-center items-center w-screen h-screen text-white">
 
-    <section class="review-section w-full">
-    <div class="review-heading">
-        <h1 class="text-center text-4xl p-5">Review Collecter</h1>
-    </div>
-    <div class="container review-form p-5 flex justify-evenly gap-2.5">
-        <div class="left-container w-3xl p-5">
-            <div class="form-group flex flex-col gap-2.5 w-xl mt-3">
-                <label class="">Review title</label>
-                <input class="border-1 border-[#7886C7]  rounded-md p-2 " type="text" name="title" id="title">
-            </div>
-            <div class="form-group flex flex-col gap-2.5 w-xl mt-3">
-                <label class="">Add Your Review</label>
-                <textarea id="review-desc" class="border-1 border-[#7886C7] rounded-md" rows="10"></textarea>
-            </div>
-            <div class="form-group flex justify-end gap-2.5 w-xl mt-3">
-                <button type="button" id="submit"
-                    class="w-3xs text-lg border-1 rounded-lg border-none bg-[#37B5B6]  p-2.5 cursor-pointer hover:bg-[#F2F597] hover:text-[#0A1D56]">Submit</button>
-            </div>
+    <section class="review-section border-1 border-[#7886C7] rounded-lg w-5xl h-[80vh] p-5">
+        <div class="review-heading">
+            <h1 class="text-center text-4xl p-5">Review Collecter</h1>
         </div>
-        <div class="right-container w-3xl border-l-2 border-l-amber-50 p-5">
-            <ul id="review-list" class="flex flex-col gap-2.5">
-                <li class="border-[#7886C7] border-1 p-2.5 rounded-sm">
-                    <div class="flex flex-col gap-1.5 justify-between">
-                        <h2 class="text-xl">Hello</h2>
-                        <p class="text-sm ml-3">Lorem ipsum dolor sit amet <span
-                                class="remove-li pl-10 text-red-600 cursor-pointer">X</span>
-                        </p>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <div class="review-form flex justify-evenly gap-5 ">
+            <div class="left-container w-lg">
+                <div class="form-group flex flex-col gap-2.5">
+                    <label class="">Review title</label>
+                    <input class="border-1 border-[#7886C7]  rounded-md p-2 " type="text" name="title" id="title">
+                </div>
+                <div class="form-group flex flex-col gap-2.5 mt-3">
+                    <label class="">Add Your Review</label>
+                    <textarea id="review-desc" class="border-1 border-[#7886C7] rounded-md" rows="10"></textarea>
+                </div>
+                <div class="form-group flex justify-end gap-2.5 mt-3">
+                    <button type="button" id="submit"
+                        class="w-3xs text-lg border-1 rounded-lg border-none bg-[#37B5B6]  p-2.5 cursor-pointer hover:bg-[#F2F597] hover:text-[#0A1D56]">Submit</button>
+                </div>
+            </div>
+            <div class="right-container border-l-2 border-l-amber-50 p-5 w-lg">
+                <ul id="review-list" class="flex flex-col gap-2.5">
+                    <li class="border-[#7886C7] border-1 p-2.5 rounded-sm">
+                        <div class="flex flex-col gap-1.5 justify-between">
+                            <h2 class="text-xl">Hello</h2>
+                            <p class="text-sm ml-3">Lorem ipsum dolor sit amet <span
+                                    class="remove-li pl-10 text-red-600 cursor-pointer">X</span>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
 
-    </div>
+        </div>
     </section>
-</div>
+    </div>
 </body>
 <script>
     const submit = document.getElementById('submit');
@@ -59,37 +59,37 @@
     const reviewList = document.getElementById('review-list');
 
     submit.addEventListener('click', () => {
-        if( title.value &&  reviewDesc.value){
-        const li = document.createElement('li');
-        li.classList.add('border-[#7886C7]', 'border-1', 'p-2.5', 'rounded-sm');
-        
-        const div = document.createElement('div');
-        div.classList.add('flex', 'flex-col', 'gap-1.5', 'justify-between');
+        if (title.value && reviewDesc.value) {
+            const li = document.createElement('li');
+            li.classList.add('border-[#7886C7]', 'border-1', 'p-2.5', 'rounded-sm');
 
-        const h2 = document.createElement('h2');
-        h2.classList.add('text-xl');    
-        h2.textContent = title.value;
-        div.appendChild(h2);
+            const div = document.createElement('div');
+            div.classList.add('flex', 'flex-col', 'gap-1.5', 'justify-between');
 
-        const p = document.createElement('p');
-        p.classList.add('text-sm', 'ml-3');
-        p.textContent = reviewDesc.value;
+            const h2 = document.createElement('h2');
+            h2.classList.add('text-xl');
+            h2.textContent = title.value;
+            div.appendChild(h2);
 
-        const span = document.createElement('span');
-        span.classList.add('remove-li', 'pl-10', 'text-red-600', 'cursor-pointer');
-        span.textContent = 'X';
-        span.addEventListener('click', () => {
-            li.remove();
-        });
-        p.appendChild(span); 
-        div.appendChild(p);
+            const p = document.createElement('p');
+            p.classList.add('text-sm', 'ml-3');
+            p.textContent = reviewDesc.value;
 
-        console.log(div);
-        li.appendChild(div);
-        reviewList.appendChild(li);
-        title.value = "";
-        reviewDesc.value = "";
-    }
+            const span = document.createElement('span');
+            span.classList.add('remove-li', 'pl-10', 'text-red-600', 'cursor-pointer');
+            span.textContent = 'X';
+            span.addEventListener('click', () => {
+                li.remove();
+            });
+            p.appendChild(span);
+            div.appendChild(p);
+
+            console.log(div);
+            li.appendChild(div);
+            reviewList.appendChild(li);
+            title.value = "";
+            reviewDesc.value = "";
+        }
     });
 
 
