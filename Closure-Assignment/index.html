@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexical Scoping and Closure function</title>
+    <style>
+        #buttonsContainer {
+            padding-top: 50px;
+        }
+
+        .btn-creater {
+            margin-top: 10px;
+            justify-content: center;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-creater select {
+            padding: 10px;
+        }
+
+        .btn-creater button {
+            padding: 10px;
+        }
+
+        #custom-color {
+            height: 40px;
+            width: 100px;
+            border: none;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btn-creater">
+        <select id="colorSelector">
+            <option class="">Select Color</option>
+            <option class="red">Red</option>
+            <option class="Green">Green</option>
+            <option class="Black">Black</option>
+            <option class="Custom">Custom</option>
+        </select>
+        <input type="color" id="custom-color">
+        <button id="createButton">Create</button>
+    </div>
+    <div id="buttonsContainer"></div>
+</body>
+<script>
+    document.body.style.height = "100vh";
+    const colorSelector = document.getElementById("colorSelector"),
+        createButton = document.getElementById("createButton"),
+        customColor = document.getElementById("custom-color"),
+        buttonsContainer = document.getElementById("buttonsContainer");
+
+    colorSelector.addEventListener('change', function (e) {
+        if (e.target.value === "Custom") {
+            customColor.style.display = 'block';
+            console.log(customColor)
+        }else customColor.style.display = 'none';
+    })
+
+    createButton.addEventListener('click', function (e) {
+        const colorValue = colorSelector.value !== "Custom" ? colorSelector.value : customColor.value;
+        let isButtonAlredyExist = false;
+        for (let i = 0; i < buttonsContainer.children.length; i++) {
+            if (buttonsContainer.children[i].getAttribute('data-color') === colorValue) {
+                isButtonAlredyExist = true;
+                break;
+            }
+        }
+
+        if (isButtonAlredyExist){
+            alert("Button Alrady Exist...");
+            return;
+        }
+
+        if (colorValue !== "" && isButtonAlredyExist === false) {
+            const btnClr = createButtonWithColor(colorValue);
+            btnClr.addEventListener('click', function (e) {
+                changeBgColor(colorValue)();
+            });
+        }
+    });
+
+    function createButtonWithColor(color) {
+        const colorButton = document.createElement('button');
+        colorButton.setAttribute('data-color', color)
+        colorButton.innerText = color;
+        colorButton.style.backgroundColor = color;
+
+        colorButton.style.paddingTop = '10px';
+        colorButton.style.paddingRight = '30px';
+        colorButton.style.paddingBottom = '10px';
+        colorButton.style.paddingLeft = '30px';
+        colorButton.style.border = '1px solid #fff';
+        colorButton.style.borderRadius = '5px';
+        colorButton.style.cursor = 'pointer';
+        colorButton.style.marginLeft = '10px';
+        buttonsContainer.appendChild(colorButton);
+        return colorButton;
+    }
+
+    function changeBgColor(color) {
+        return function () {
+            document.body.style.backgroundColor = color;
+        }
+    }
+</script>
+
+</html>
