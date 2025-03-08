@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <h1 class="title">Kanban Board</h1>
+    <section id="card-section" class="flex align-center">
+        <div class="cards-container" id="cards">
+
+        </div>
+        <button id="add-more-card" class="btn add-more-task" type="button">Add Card</button>
+    </section>
+    <div class="popup modal" id="modal">
+        <div class="modal-title">
+            <h5>Add Card</h5>
+            <span id="close-modal" class="close-modal">❌</span>
+        </div>
+        <form name="addcardform"  id="add-card-form">
+            <div class="title item">
+                <label>Title</label>
+                <input class="input" id="card-title" type="text" name="title" placeholder="To do">
+            </div>
+            <div class="color item">
+                <label>Color</label>
+                <input class="custom-color" name="color" id="card-color" value="#000000" type="color">
+            </div>
+
+            <div class="desc item">
+                <label>Description</label>
+                <input class="input" placeholder="Task Description" id="card-desc" name="desc" type="desc">
+            </div>
+
+            <button class="btn submit-btn" type="submit" id="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+<script src="./script.js"></script>
+
+</html>
