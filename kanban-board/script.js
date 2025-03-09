@@ -1,4 +1,4 @@
-let allCardsData = localStorage.getItem('cardItems');
+let allCardsData = localStorage.getItem('kanbanBoardData') !== null ? JSON.parse(localStorage.getItem('kanbanBoardData')):{};
 const addMoreCard = document.getElementById('add-more-card'),
     modal = document.getElementById('modal'),
     cardSection = document.getElementById('card-section'),
@@ -8,7 +8,11 @@ const addMoreCard = document.getElementById('add-more-card'),
 
 let draggableTaskObjData;
 
-if (!allCardsData) localStorage.setItem('cardItems', JSON.stringify({}));
+console.log(allCardsData);
+
+if (allCardsData === 'null' || allCardsData === null) {
+    localStorage.setItem('kanbanBoardData', JSON.stringify({}));
+}
 else {
     refreshData();
 }
@@ -20,12 +24,11 @@ closeModal.addEventListener('click', function (e) {
 });
 
 function addCardDatainLocalStorage(obj) {
-    let cardsData = JSON.parse(localStorage.getItem('cardItems'));
-    const categoryData = cardsData[obj.title];
+    const categoryData =  allCardsData[obj.title];
     let status = true;
     if (categoryData === undefined) {
-        cardsData[obj.title] = {};
-        cardsData[obj.title] = obj;
+        allCardsData[obj.title] = {};
+        allCardsData[obj.title] = obj;
         setAndRefreshData();
     } else {
         alert("Card Already Exist..");
@@ -56,7 +59,6 @@ addCardForm.addEventListener('submit', function (e) {
         };
         const isCardAdded = addCardDatainLocalStorage(obj);
         if (isCardAdded) {
-            createCardElement(obj);
             e.target.reset();
             closePop();
         }
@@ -177,14 +179,11 @@ function addTask(cardData) {
 }
 
 function setAndRefreshData() {
-    localStorage.setItem('cardItems', JSON.stringify(allCardsData));
+    localStorage.setItem('kanbanBoardData', JSON.stringify(allCardsData));
     refreshData();
 };
 function refreshData() {
     allCards.innerHTML = "";
-    allCardsData = JSON.parse(localStorage.getItem('cardItems'));
-    console.log(allCardsData);
-
     for (let i in allCardsData) {
         createCardElement(allCardsData[i]);
     }
