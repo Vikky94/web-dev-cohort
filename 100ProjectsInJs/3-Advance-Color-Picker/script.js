@@ -4,12 +4,12 @@ const inputColor = document.getElementById('input-color'),
   savedColors = document.getElementById('saved-colors'),
   saveColorBtn = document.getElementById('save-color-btn');
 
-  let allColorData = localStorage.getItem('colors');
+let allColorData = localStorage.getItem('colors');
 
-  if( allColorData ){
-    refreshColors()
-  }
-function refreshColors(){
+if (allColorData) {
+  refreshColors()
+}
+function refreshColors() {
   savedColors.innerHTML = "";
   allColorData = localStorage.getItem('colors');
   allColorData = JSON.parse(allColorData);
@@ -27,17 +27,19 @@ copyColorBtn.addEventListener('click', function () {
 });
 
 saveColorBtn.addEventListener('click', function (e) {
-  let colorData = localStorage.getItem('colors');
-  if (colorData === null) {
-    const arr = [];
-    arr.push({inputColorCode , outputColorCode});
-    localStorage.setItem('colors', JSON.stringify(arr));
-  } else {
-    colorData = JSON.parse(colorData);
-    colorData.push({inputColorCode , outputColorCode});
-    localStorage.setItem('colors', JSON.stringify(colorData));
+  if (inputColorCode && outputColorCode) {
+    let colorData = localStorage.getItem('colors');
+    if (colorData === null) {
+      const arr = [];
+      arr.push({ inputColorCode, outputColorCode });
+      localStorage.setItem('colors', JSON.stringify(arr));
+    } else {
+      colorData = JSON.parse(colorData);
+      colorData.push({ inputColorCode, outputColorCode });
+      localStorage.setItem('colors', JSON.stringify(colorData));
+    }
+    refreshColors();
   }
-  refreshColors();
 });
 
 function watchColorPicker(event) {
