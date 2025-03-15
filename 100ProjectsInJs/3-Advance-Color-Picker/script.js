@@ -35,7 +35,13 @@ saveColorBtn.addEventListener('click', function (e) {
       localStorage.setItem('colors', JSON.stringify(arr));
     } else {
       colorData = JSON.parse(colorData);
-      colorData.push({ inputColorCode, outputColorCode });
+      const colorIsALreadyExist = colorData.filter( v => v.inputColorCode === inputColorCode);
+      if( colorIsALreadyExist.length === 0 )
+        colorData.push({ inputColorCode, outputColorCode });
+      else{
+        alert('Color already Exist...');
+        return;
+      }
       localStorage.setItem('colors', JSON.stringify(colorData));
     }
     refreshColors();
