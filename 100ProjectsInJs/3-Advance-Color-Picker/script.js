@@ -7,13 +7,17 @@ const inputColor = document.getElementById('input-color'),
   let allColorData = localStorage.getItem('colors');
 
   if( allColorData ){
-    allColorData = JSON.parse(allColorData);
-    allColorData.forEach((v) => {
-      const input = `<input type="color" class="saved-color" value="#${v.inputColorCode}">`;
-      savedColors.insertAdjacentHTML('beforeend', input);
-    });
+    refreshColors()
   }
-
+function refreshColors(){
+  savedColors.innerHTML = "";
+  allColorData = localStorage.getItem('colors');
+  allColorData = JSON.parse(allColorData);
+  allColorData.forEach((v) => {
+    const input = `<input type="color" class="saved-color" value="#${v.inputColorCode}">`;
+    savedColors.insertAdjacentHTML('beforeend', input);
+  });
+}
 inputColor.addEventListener("change", watchColorPicker);
 let inputColorCode, outputColorCode;
 copyColorBtn.addEventListener('click', function () {
@@ -33,6 +37,7 @@ saveColorBtn.addEventListener('click', function (e) {
     colorData.push({inputColorCode , outputColorCode});
     localStorage.setItem('colors', JSON.stringify(colorData));
   }
+  refreshColors();
 });
 
 function watchColorPicker(event) {
