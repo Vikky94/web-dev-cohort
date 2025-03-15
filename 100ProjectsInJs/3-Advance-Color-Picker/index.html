@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Color Picker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="advance-color-picker flex-div">
+        <h2>Advance Color Picker</h2>
+        <input type="color" id="input-color" class="color input-color" />
+        <button type="button" class="btn" id="copy-color">Copy Color Code</button>
+
+        <div id="complementy-color-div" class="flex-div">
+            <input id="complementy-color" type="color" value="#ffffff" class="color output-color">
+            <button type="button" class="btn" id="save-color-btn">Save color</button>
+        </div>
+
+        <div id="saved-colors"></div>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>
