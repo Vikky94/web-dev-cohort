@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.container {
+    width: 95vw;
+    margin: auto;
+}
+
+div#video-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.video {
+    border: 1px solid;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+img {
+    border-radius: 10px;
+}
+
+input#search {
+    padding: 15px;
+    border-radius: 25px;
+    width: 100%;
+    border: 1px solid #9c9797;
+}
+
+button#search-button {
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+    width: 100px;
+
+    &:hover {
+        background: #fff;
+        color: #000;
+    }
+}
+
+div#search-bar {
+    margin-bottom: 10px;
+    width: 40%;
+}
+@media only screen and (min-width : 320px) {
+    div#video-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .video{
+        width: 300px;
+    }
+    .video-card img{
+        width: 100%;
+        height: 100%;
+    }
+    div#search-bar{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    .video {
+        width: 340px;
+    }
+}
+
+@media only screen and (min-width : 425px) {
+    .video {
+        width: 390px;
+    }
+}
+@media only screen and (min-width : 768px) {
+    div#video-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .video {
+        width: 350px;
+    }
+}
+@media only screen and (min-width : 1024px) {
+    div#video-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .video {
+        width: 310px;
+    }
+}
+@media only screen and (min-width : 1440px) {
+    div#video-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .video {
+        width: unset;
+    }
+}
+
+@media only screen and (min-width : 2500px) {
+    .video {
+        width: unset;
+    }
+    .video-card img{
+        width: 100%;
+        height: 100%;
+    }
+    .video-info{
+        font-size: 2rem;
+    }
+}
+
+/* @media only screen and (max-width : 1024px) {
+    div#video-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media only screen and (max-width : 768px) {
+    div#video-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (min-width : 425px) {
+    div#video-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+} */
