@@ -68,9 +68,6 @@ div#search-bar {
 }
 
 @media only screen and (max-width : 320px) {
-    .container{
-        width: 100vw;
-    }
     div#video-list {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -87,9 +84,6 @@ div#search-bar {
 }
 
 @media only screen and (min-width : 320px) {
-    .container{
-        width: 100vw;
-    }
     div#video-list {
         grid-template-columns: repeat(1, 1fr);
     }
